@@ -1,0 +1,23 @@
+﻿@model Events.Models.Item
+
+@{
+    ViewData["Title"] = "Admin";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+
+@using (Html.BeginForm("Admin", "Home", FormMethod.Post))
+{
+    @Html.Label("Title")
+    @Html.TextBoxFor(item => item.Title)
+    @Html.Label("Details")
+    @Html.TextBoxFor(item => item.Details)
+    @Html.Label("Category")
+    @Html.TextBoxFor(item => item.Category)
+    <select>
+        <option value="Network">Network</option>
+        
+    </select>
+    <input type="submit" value="Add" />
+}

@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Events.Models
+{
+    public class Item
+    {
+        public string Title;
+        public string Details;
+        public string Category;
+        public string Link;
+        public string Image;
+        public DateTime Created;
+        public DateTime Modified;
+        public string Tags;
+    }
+}

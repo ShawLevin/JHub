@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+                    
+@foreach(string s in Model.Keys)
+{
+    var item = Model[s];
+    
+    if (!String.IsNullOrEmpty(@item.Link))
+    {
+        <a href="@item.Link" target="_blank">@item.Title</a>
+    }
+    else
+    {
+        <b>
+            @item.Title 
+            @if(@item.Modified != new DateTime())
+            {
+                @item.Modified.ToShortDateString()
+            }
+        </b>
+    }
+    if (!String.IsNullOrEmpty(@item.Tags))
+    {
+        <img src="~/images/tag-aepi.png" height="25" width="50" />
+    }
+    <br />
+    @item.Details<br /><br />
+}
