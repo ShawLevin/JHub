@@ -20,10 +20,11 @@
             }
         </b>
     }
-    if (!String.IsNullOrEmpty(@item.Tags))
+    @foreach (String t in @item.Tag)
     {
-        <img src="~/images/tag-aepi.png" height="25" width="50" />
+        <span style="color:darkgoldenrod; text-shadow: 0 0 5px #0000FF;">@t</span>
     }
+    
     <br />
     @item.Details<br /><br />
 }

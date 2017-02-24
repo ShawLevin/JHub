@@ -15,5 +15,6 @@ namespace Events.Models
         public DateTime Created;
         public DateTime Modified;
         public string Tags;
+        public IEnumerable<string> Tag { get { return String.IsNullOrEmpty(Tags) ? new string[] { } : Tags.Split(','); } }
     }
 }

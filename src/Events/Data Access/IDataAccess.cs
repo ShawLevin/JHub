@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace Events.Data_Access
 {
-    interface IDataAccess
+    public interface IDataAccess
     {
         Task<Dictionary<string, Item>> GetItems(string category);
     }
@@ -42,7 +42,7 @@ namespace Events.Data_Access
 
     public class OfflineDataAccess : IDataAccess
     {
-        public async Task<Dictionary<string, Item>> GetItems(string category)
+        public Task<Dictionary<string, Item>> GetItems(string category)
         {
             string[] categories = { "Networking","Orgs","Events","Jobs" };
             Dictionary<string, Item> items = new Dictionary<string, Item>();
@@ -50,7 +50,7 @@ namespace Events.Data_Access
             {
                 items.Add(i.ToString(), new Item { Title = $"Item {i}", Category = categories[i % categories.Length], Created = DateTime.Now, Details = "Details", Link = "http://www.google.com" });
             }
-            return items;
+            return Task.FromResult<Dictionary<string, Item>>(items);
         }
     }
 }

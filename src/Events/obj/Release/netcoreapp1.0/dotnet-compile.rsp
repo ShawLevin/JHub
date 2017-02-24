@@ -1,5 +1,5 @@
---temp-output:C:\Users\Shaw\Source\Repos\Events\src\Events\obj\Release\netcoreapp1.0\
---out:C:\Users\Shaw\Source\Repos\Events\src\Events\bin\Release\netcoreapp1.0\Events.dll
+--temp-output:C:\Users\Shaw\Source\Repos\JHub\src\Events\obj\Release\netcoreapp1.0\
+--out:C:\Users\Shaw\Source\Repos\JHub\src\Events\bin\Release\netcoreapp1.0\Events.dll
 --define:RELEASE
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -194,8 +194,10 @@
 --reference:C:\Users\Shaw\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Shaw\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Shaw\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"C:\Users\Shaw\Source\Repos\Events\src\Events\obj\Release\netcoreapp1.0\Eventsdotnet-compile.deps.json",Events.deps.json
-C:\Users\Shaw\Source\Repos\Events\src\Events\Program.cs
-C:\Users\Shaw\Source\Repos\Events\src\Events\Startup.cs
-C:\Users\Shaw\Source\Repos\Events\src\Events\Controllers\HomeController.cs
-C:\Users\Shaw\Source\Repos\Events\src\Events\Models\Item.cs
+--resource:"C:\Users\Shaw\Source\Repos\JHub\src\Events\obj\Release\netcoreapp1.0\Eventsdotnet-compile.deps.json",Events.deps.json
+C:\Users\Shaw\Source\Repos\JHub\src\Events\Program.cs
+C:\Users\Shaw\Source\Repos\JHub\src\Events\Startup.cs
+C:\Users\Shaw\Source\Repos\JHub\src\Events\Controllers\HomeController.cs
+C:\Users\Shaw\Source\Repos\JHub\src\Events\Data Access\DataFactory.cs
+C:\Users\Shaw\Source\Repos\JHub\src\Events\Data Access\IDataAccess.cs
+C:\Users\Shaw\Source\Repos\JHub\src\Events\Models\Item.cs

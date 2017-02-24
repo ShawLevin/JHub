@@ -9,15 +9,16 @@
 
 @using (Html.BeginForm("Admin", "Home", FormMethod.Post))
 {
-    @Html.Label("Title")
-    @Html.TextBoxFor(item => item.Title)
-    @Html.Label("Details")
-    @Html.TextBoxFor(item => item.Details)
-    @Html.Label("Category")
-    @Html.TextBoxFor(item => item.Category)
-    <select>
-        <option value="Network">Network</option>
-        
-    </select>
+    @Html.Label("Title")<br/>
+    @Html.TextBoxFor(a => a.Title)<br/>
+    @Html.Label("Details")<br />
+    @Html.TextBoxFor(a => a.Details)<br />
+    @Html.Label("Link")<br />
+    @Html.TextBoxFor(a => a.Link)<br />
+    @Html.Label("Pic")<br />
+    @Html.TextBoxFor(a => a.Image)<br />
+    @Html.Label("Tags")<br />
+    @Html.TextBoxFor(a => a.Tags)<br />
+    <select asp-for="Category" asp-items="ViewBag.Categories"></select><br/>
     <input type="submit" value="Add" />
 }
