@@ -108,7 +108,7 @@ namespace Events.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Admin(string Title, string details, string category, string link, string image, string tags)
+        public async Task<IActionResult> Admin(string Title, string details, string category, string location, DateTime EventTime, DateTime EventDate, string link, string image, string tags)
         {
             ViewBag.Categories = new List<SelectListItem>
             {
@@ -127,6 +127,11 @@ namespace Events.Controllers
             item.Details = details;
             item.Link = link;
             item.Image = image;
+            item.Created = DateTime.Now;
+            item.Modified = DateTime.Now;
+            item.EventDate = EventDate;
+            item.EventTime = EventTime;
+            item.Location = location;
             item.Category = category;
             item.Tags = tags;
             string jsonObject = JsonConvert.SerializeObject(item);

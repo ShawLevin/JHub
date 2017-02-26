@@ -14,6 +14,9 @@ namespace Events.Models
         public string Image;
         public DateTime Created;
         public DateTime Modified;
+        public DateTime EventDate;
+        public DateTime EventTime;
+        public string Location;
         public string Tags;
         public IEnumerable<string> Tag { get { return String.IsNullOrEmpty(Tags) ? new string[] { } : Tags.Split(','); } }
     }

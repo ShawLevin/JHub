@@ -32,7 +32,7 @@ namespace Events.Data_Access
                 {
                     retValue = await response.Content.ReadAsStringAsync();
                     items = JsonConvert.DeserializeObject<Dictionary<string, Item>>(retValue);
-                    items = items.Where(i => i.Value.Category == category).ToDictionary(k => k.Key, v => v.Value);
+                    items = items.Where(i => i.Value.Category == category).OrderByDescending(i=>i.Value.Created).ToDictionary(k => k.Key, v => v.Value);
 
                 }
             }

@@ -2,29 +2,63 @@
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
                     
-@foreach(string s in Model.Keys)
+@foreach (string s in Model.Keys)
 {
     var item = Model[s];
-    
+
     if (!String.IsNullOrEmpty(@item.Link))
     {
-        <a href="@item.Link" target="_blank">@item.Title</a>
+        <h3>
+            <a href="@item.Link" target="_blank">@item.Title</a>
+        </h3>
     }
     else
     {
-        <b>
-            @item.Title 
-            @if(@item.Modified != new DateTime())
-            {
-                @item.Modified.ToShortDateString()
-            }
-        </b>
+            <h3>@item.Title</h3>
+    }
+    @if (@item.Modified != new DateTime())
+    {
+        @item.Modified.ToShortDateString()
     }
     @foreach (String t in @item.Tag)
     {
-        <span style="color:darkgoldenrod; text-shadow: 0 0 5px #0000FF;">@t</span>
+        if (@t.Trim() == "aepi")
+        {
+            <img src="~/images/tag-aepi.png" height="25" width="50" />
+        }
+        if (@t.Trim() == "21")
+        {
+            <img src="~/images/21plus.png" height="25" width="50" />
+        }
+        if (@t.Trim() == "students")
+        {
+            <img src="~/images/students.png" height="25" width="50" />
+        }
+        if (@t.Trim() == "center city")
+        {
+            <img src="~/images/centercity.png" height="25" width="100" />
+        }
+        if (@t.Trim() == "suburbs")
+        {
+            <img src="~/images/suburbs.png" height="25" width="75" />
+        }
+        if (@t.Trim() == "fancy")
+        {
+            <img src="~/images/fancy.jpeg" height="50" width="50" />
+        }
+        if (@t.Trim() == "kids")
+        {
+            <img src="~/images/families.jpeg" height="35" width="75" />
+        }
+        if (@t.Trim() == "israel")
+        {
+            <img src="~/images/israel.gif" height="50" width="75" />
+        }
     }
-    
-    <br />
-    @item.Details<br /><br />
+
+    <div>
+        @item.Details
+    </div>
+    <div>@item.EventDate.ToShortDateString() @item.EventTime.ToShortTimeString() @item.Location</div>
+    <div>Posted: @item.Created</div><br /><br />
 }

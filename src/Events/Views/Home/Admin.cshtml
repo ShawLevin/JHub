@@ -17,6 +17,12 @@
     @Html.TextBoxFor(a => a.Link)<br />
     @Html.Label("Pic")<br />
     @Html.TextBoxFor(a => a.Image)<br />
+    @Html.Label("Location")<br />
+    @Html.TextBoxFor(a => a.Location)<br />
+    @Html.Label("Time")<br />
+    <input type="date" asp-for="EventDate" /><br />
+    @Html.Label("Time")<br />
+    <input type="time" asp-for="EventTime" /><br />
     @Html.Label("Tags")<br />
     @Html.TextBoxFor(a => a.Tags)<br />
     <select asp-for="Category" asp-items="ViewBag.Categories"></select><br/>
