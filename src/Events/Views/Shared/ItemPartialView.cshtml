@@ -16,10 +16,7 @@
     {
             <h3>@item.Title</h3>
     }
-    @if (@item.Modified != new DateTime())
-    {
-        @item.Modified.ToShortDateString()
-    }
+
     @foreach (String t in @item.Tag)
     {
         if (@t.Trim() == "aepi")
@@ -52,13 +49,25 @@
         }
         if (@t.Trim() == "israel")
         {
-            <img src="~/images/israel.gif" height="50" width="75" />
+            <img src="~/images/israel.png" height="40" width="60" />
         }
     }
 
     <div>
         @item.Details
     </div>
-    <div>@item.EventDate.ToShortDateString() @item.EventTime.ToShortTimeString() @item.Location</div>
-    <div>Posted: @item.Created</div><br /><br />
+    <div>
+        @if (@item.EventDate != new DateTime())
+        {
+            @item.EventDate.ToShortDateString()
+        }
+        @if (@item.EventTime != new DateTime())
+        {
+            @item.EventTime.ToShortTimeString()
+        }
+        @item.Location</div>
+    <div>Posted / Modified @item.Created.ToShortDateString() @if (@item.Modified != new DateTime())
+    {
+    @item.Modified.ToShortDateString()
+    }</div><hr />
 }

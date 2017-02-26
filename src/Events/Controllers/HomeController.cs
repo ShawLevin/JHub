@@ -72,7 +72,7 @@ namespace Events.Controllers
 
         public async Task<IActionResult> Candidates()
         {
-            ViewData["Message"] = "Find your next great hire from our list of community members.";
+            ViewData["Message"] = "Find your next great hire from our list of community members. We can provide contact info.";
 
             Dictionary<string, Item> items = await DataFactory.DataAccessFactory().GetItems(this.ControllerContext.RouteData.Values["action"].ToString());
             return View("Candidates", items);
