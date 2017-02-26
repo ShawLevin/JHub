@@ -66,8 +66,5 @@
             @item.EventTime.ToShortTimeString()
         }
         @item.Location</div>
-    <div>Posted / Modified @item.Created.ToShortDateString() @if (@item.Modified != new DateTime())
-    {
-    @item.Modified.ToShortDateString()
-    }</div><hr />
+    <div>Updated: @item.Modified.ToShortDateString()</div><hr />
 }
